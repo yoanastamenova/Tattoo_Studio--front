@@ -1,19 +1,30 @@
-export const registerUser = async () => {
+const URL = 'http://localhost:4000'
 
-    const request = await fetch('http://localhost:4000/register',
-      {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-      });
+export const registerUser = async (credentials) => {
+  const request = await fetch(`${URL}/api/auth/register`,
+    {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    }
+  );
 
-    const result = await request.json();
-
-    console.log(result)
-   }
+  const result = await request.json();
+  return result;
+}
 
 export const loginUser = async () => {
-    
+  const request = await fetch(`${URL}/api/auth/login`,
+    {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    });
+
+  const result = await request.json();
+  return result;
 }
