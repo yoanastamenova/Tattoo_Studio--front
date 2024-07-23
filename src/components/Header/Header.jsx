@@ -1,12 +1,11 @@
-export const Header = () => {
+import React from 'react'
 
-    const navigate = useNavigate();         //hook to use navigate function
-  
-    return (
-      <>
-        <div onClick={() => navigate('/login')}> Login </div>
-        <CSurfer path="/register" content="Register" />
-        <CSurfer path="/services" content="Services" />
-      </>
-    )
-  }
+export const Header = () => {
+  return (
+    <>
+    <div className='flex justify-space-between'>
+        <div>Login</div>
+    </div>
+    </>
+  )
+}
