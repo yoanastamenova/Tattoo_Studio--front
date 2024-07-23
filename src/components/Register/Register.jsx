@@ -7,7 +7,7 @@ export const Register = () => {
 
     const [credentials, setCredentials] = useState({        //declaring credentials of the user needed 
         email: "",
-        password: "",
+        password_hash: "",
     })
 
     const handleChange = (e) => {
@@ -46,7 +46,7 @@ export const Register = () => {
     <div>
         <input
           type="password"
-          name="password"
+          name="password_hash"
           placeholder="Password"
           onChange={handleChange}
         />
