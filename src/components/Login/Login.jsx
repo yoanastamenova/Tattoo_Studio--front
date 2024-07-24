@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { CInput } from '../CInput/CInput';
+import { loginUser } from '../../services/apiCalls';
+import { jwtDecode } from 'jwt-decode';
 
 export const Login = () => {
   const [credentials, setCredentials] = useState({
     email: "",
-    password: "",
+    password_hash: "",
   });
 
   const handleChange = (e) => {
@@ -14,7 +16,6 @@ export const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
 
    const login = async () => {
     console.log("Login");
@@ -33,7 +34,7 @@ export const Login = () => {
         alert(response.message)
       }
     } catch (error) {
-      
+      console.log(error)
     }
   };
   
@@ -51,7 +52,7 @@ export const Login = () => {
       <div>
         <CInput
           type="password"
-          name="password"
+          name="password_hash"
           placeholder="Password"
           emitFunction={handleChange}
         />
