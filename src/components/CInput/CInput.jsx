@@ -1,23 +1,25 @@
 import React from "react";
 
-export const CInput = ({
-  type = "text",
-  name = "",
-  placeholder = "",
-  emitFunction,
-  clickFunction,
-  value,
-}) => {
-  return (
+export const CInput = (
+  { 
+      type = 'text', 
+      name = "", 
+      placeholder = "", 
+      emitFunction,
+      className = "",
+      clickFunction,
+      value
+  }
+) => {
+return (
   <>
-    <input 
-    type={type} 
+    <input type={type} 
     name={name} 
     placeholder={placeholder} 
-    emitFunction={emitFunction} 
-    clickFunction={clickFunction}
-    value={value}
-    id={id} />
+    onChange={emitFunction} 
+    onClick={clickFunction} 
+    value={value} 
+    className={className}/>
   </>
-  )
-};
+)
+}
