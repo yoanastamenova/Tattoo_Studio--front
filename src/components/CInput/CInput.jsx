@@ -6,20 +6,26 @@ export const CInput = (
       name = "", 
       placeholder = "", 
       emitFunction,
-      className = "",
       clickFunction,
-      value
+      className = "",
+      value,
+      label
   }
 ) => {
 return (
   <>
-    <input type={type} 
+    <div>
+      <label htmlFor="">{label}</label>
+    </div>
+    <input 
+    type={type} 
     name={name} 
     placeholder={placeholder} 
     onChange={emitFunction} 
     onClick={clickFunction} 
     value={value} 
-    className={className}/>
+    className={className}
+    />
   </>
 )
 }
