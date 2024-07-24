@@ -62,7 +62,6 @@ export const Login = () => {
         value="Login"
         placeholder="Login"
         clickFunction={login}
-
       />
     </>
   )

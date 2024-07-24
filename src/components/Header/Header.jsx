@@ -9,10 +9,11 @@ export const Header = () => {
     <>
     <div className="flex justify-space-between">
          <CSurfer path="/" content="Home"/>
-         <CSurfer path="/Services" content="Services"/>
-         <CSurfer path="/Appointments" content="Appointments"/>
-         <CSurfer path="/Register" content="Register"/>
-         <CSurfer path="/Login" content="Login"/>
+         <CSurfer path="/services" content="Services"/>
+         <CSurfer path="/appointments" content="Appointments"/>
+         <CSurfer path="/register" content="Register"/>
+         <CSurfer path="/login" content="Login"/>
+         <CSurfer path="/profile" content="Profile"/>
     </div>
     </>
   )
