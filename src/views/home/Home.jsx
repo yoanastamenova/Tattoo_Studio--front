@@ -1,5 +1,5 @@
 import React from 'react'
-import studio from "../../../public/images/studio.jpg"
+import studio from "/images/studio.jpg"
 import "./Home.css"
 
 export const Home = () => {
