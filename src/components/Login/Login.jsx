@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { CInput } from '../CInput/CInput';
 import { loginUser } from '../../services/apiCalls';
 import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -9,8 +10,9 @@ export const Login = () => {
     password_hash: "",
   });
 
+  const navigate = useNavigate(); // using useNavigate here
+
   const handleChange = (e) => {
-    console.log("HandleChange");
     setCredentials((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -18,26 +20,25 @@ export const Login = () => {
   };
 
    const login = async () => {
-    console.log("Login");
-    console.log(credentials);
     try {
-      const response = await loginUser(credentials)
+      const response = await loginUser(credentials);
       if (response.success) {
-        const decodedToken = jwtDecode(response.token)
-        console.log(decodedToken)
+        const decodedToken = jwtDecode(response.token);
         const passport = {
           token: response.token,
-          tokenData: decodedToken
-        }
-        localStorage.setItem("passport", JSON.stringify(passport))
+          tokenData: decodedToken,
+        };
+        localStorage.setItem("passport", JSON.stringify(passport));
+        
+        navigate('/profile'); // Navigate to profile page upon successful login
       } else {
-        alert(response.message)
+        alert(response.message);
       }
     } catch (error) {
-      console.log(error)
+      console.error(error);
     }
   };
-  
+
   return (
     <>
       <h1>Login</h1>
@@ -56,7 +57,7 @@ export const Login = () => {
           placeholder="Password"
           emitFunction={handleChange}
         />
-        </div>
+      </div>
       <CInput
         type="button"
         name="button"
