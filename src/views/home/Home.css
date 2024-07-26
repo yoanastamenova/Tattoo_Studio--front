@@ -1,4 +1,12 @@
 .imgHome {
-    width: 70em;
+    width: 80em;
     height: 40em;
+}
+
+.left {
+    margin-right: 20px;
+}
+
+.right {
+    margin-left: 20px;
 }

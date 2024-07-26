@@ -1,43 +1,51 @@
-import React from 'react'
-import { CSurfer } from '../CSurfer/CSurfer'
-import { useNavigate } from 'react-router-dom'
-import logo from "/images/logo_inside.png"
-import "./Header.css"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { CSurfer } from "../CSurfer/CSurfer";
+import pic_logo from "/images/pic_logo.png"; // Update path as necessary
+import "./Header.css";
+import logo_svg from "/images/logo-svg.svg"
 
 export const Header = () => {
   const navigate = useNavigate();
+  const passport = JSON.parse(localStorage.getItem("passport"));
+  let token = passport?.token;
 
-  const passport = JSON.parse(localStorage.getItem("passport"))
-  let token;
-  if(passport) {
-    token = passport.token
-  }
-
-    // Logout function
-    const handleLogout = () => {
-      localStorage.removeItem("passport");  // Remove token
-      navigate("/");  // Navigate to home page
-    }
+  const handleLogout = () => {
+    localStorage.removeItem("passport");
+    navigate("/");
+  };
 
   return (
-    <>
-    <div className="flex justify-space-between">
-    <img src={logo} className='logo_inside' />
-         <CSurfer path="/" content="Home"/>
-         <CSurfer path="/services" content="Services"/>
-         { token ? (
-         <>
-         <CSurfer path="/profile" content="Profile"/>
-         <CSurfer path="/appointments" content="Appointments"/>
-         <div onClick={handleLogout}> LOGOUT </div>
-         </>
-         ) : (
-         <>
-         <CSurfer path="/register" content="Register"/>
-         <div onClick={() => navigate("/login")}> Login </div>
-         </>
-         )}
+    <div className="header">
+      <a onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+        <img src={logo_svg} className="logo_inside" alt="Logo" />
+      </a>
+      <div className="nav-items">
+        <CSurfer className="nav-item" path="/" content="Home" />
+        <CSurfer className="nav-item" path="/services" content="Services" />
+        <CSurfer className="nav-item" path="/artists" content="Artists" />
+        {token ? (
+          <>
+            <CSurfer className="nav-item" path="/profile" content="Profile" />
+            <CSurfer
+              className="nav-item"
+              path="/appointments"
+              content="Appointments"
+            />
+            <div className="nav-item" onClick={handleLogout}>
+              {" "}
+              Logout
+            </div>
+          </>
+        ) : (
+          <>
+            <CSurfer className="nav-item" path="/register" content="Register" />
+            <CSurfer className="nav-item" path="/login" content="Login" />
+          </>
+        )}
+      </div>
     </div>
-    </>
-  )
-}
+  );
+};
+
+export default Header;
