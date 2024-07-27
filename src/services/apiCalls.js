@@ -79,3 +79,13 @@ export const createAppointment = async (data, token) => {
   })
   return await response.json()
 }
+
+export const deleteAppointment = async (token, id) => {
+  const response = await fetch(`${URL}/api/appointments/delete/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  });
+  return await response.json();
+}

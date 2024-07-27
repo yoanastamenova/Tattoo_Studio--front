@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { getAppointments } from "../../../services/apiCalls";
+import { deleteAppointment, getAppointments } from "../../../services/apiCalls";
 import banner from "/images/banner.png";
 import { CInput } from "../../../components/CInput/CInput";
 import { useNavigate } from "react-router-dom";
 
 export const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
-  const datosUser = JSON.parse(localStorage.getItem("passport"));
+  const userData = JSON.parse(localStorage.getItem("passport"));
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const result = await getAppointments(datosUser.token);
+        const result = await getAppointments(userData.token);
         if (result.success) {
           setAppointments(result.data);
         } else {
@@ -24,7 +24,7 @@ export const Appointments = () => {
     };
 
     fetchAppointments();
-  }, [datosUser.token]);
+  }, [userData.token]);
 
   const formatDate = (dateString) => {
     const options = {
@@ -34,43 +34,68 @@ export const Appointments = () => {
       hour: "2-digit",
       minute: "2-digit",
     };
-    return new Date(dateString)
-    .toLocaleDateString("en-US", options);
+    return new Date(dateString).toLocaleDateString("en-US", options);
   };
 
   const handleNewAppointment = () => {
-    navigate('/appointments/new')
-  }
+    navigate("/appointments/new");
+  };
+  
+  const handleDeleteAppointment = async (id, index) => {
+    try {
+      // Assuming `deleteAppointment` uses `(token, id)` as its parameters
+      const result = await deleteAppointment(userData.token, id);
+      if (result.success) {
+        const updatedAppointments = [...appointments];
+        updatedAppointments.splice(index, 1); // Properly use `index` to delete from state
+        setAppointments(updatedAppointments);
+        alert("Appointment successfully deleted.");
+      } else {
+        console.error("Failed to delete appointment:", result.message);
+        alert("Failed to delete appointment.");
+      }
+    } catch (error) {
+      console.error("Error deleting appointment:", error);
+      alert("Error deleting appointment.");
+    }
+  };
+
   return (
     <>
-    <div>
-      {appointments.length > 0 ? (
-        appointments.map((appointment, index) => (
-          <div key={index}>
-            <p>Appointment Date: {formatDate(appointment.appointment_date)}</p>
-            <p>Service: {appointment.service.service_name}</p>
-            <p>
-              Artist: {appointment.artist.first_name}{" "}
-              {appointment.artist.last_name}
-            </p>
-          </div>
-        ))
-      ) : (
-        <p>No appointments found.</p>
-      )}
-      <CInput
-        type="button"
-        name="newAppointment"
-        value="Create"
-        clickFunction={handleNewAppointment}
-      />
-      <CInput
-        type="button"
-        name="editAppointment"
-        value="Edit"
-      />
-    </div>
-     <img src={banner} />
-     </>
+      <div>
+        {appointments.length > 0 ? (
+          appointments.map((appointment, index) => (
+            <div key={appointment.id}>
+              <p>
+                Appointment Date: {formatDate(appointment.appointment_date)}
+              </p>
+              <p>Service: {appointment.service.service_name}</p>
+              <p>
+                Artist: {appointment.artist.first_name}{" "}
+                {appointment.artist.last_name}
+              </p>
+              <button >
+                Edit
+              </button>{" "}
+              <button
+                onClick={() => handleDeleteAppointment(appointment.id, index)}
+              >
+                Delete
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>No appointments found.</p>
+        )}
+        <br></br>
+        <CInput
+          type="button"
+          name="newAppointment"
+          value="Create new appointment"
+          clickFunction={handleNewAppointment}
+        />
+      </div>
+      <img src={banner} />
+    </>
   );
 };
