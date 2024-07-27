@@ -23,6 +23,16 @@ export const Profile = () => {
   const [editing, setEditing] = useState(false); 
 
   const passport = JSON.parse(localStorage.getItem("passport"));
+
+  const formatDate = (dateString) => {
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    };
+    return new Date(dateString)
+    .toLocaleDateString("en-US", options);
+  };
   
   let token;
   const navigate = useNavigate();
@@ -99,8 +109,8 @@ export const Profile = () => {
       className={editing ? "" : "hidden"}
       emitFunction={editInputHandler}
     />
-    <p>Created At: {profileData.created_at}</p>
-    <p>Updated At: {profileData.updated_at}</p>
+    <p>Created At: {formatDate(profileData.created_at)}</p>
+    <p>Updated At: {formatDate(profileData.updated_at)}</p>
     <CInput
       type="button"
       name="Edit"
