@@ -3,6 +3,8 @@ import { CInput } from '../CInput/CInput';
 import { loginUser } from '../../services/apiCalls';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import banner from "/images/banner.png"
+
 
 export const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -65,6 +67,7 @@ export const Login = () => {
         placeholder="Login"
         clickFunction={login}
       />
+      <img src={banner} />
     </>
   )
 }

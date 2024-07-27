@@ -55,3 +55,15 @@ export const updateProfile = async (data, token) => {
 
   return await response.json();
 }
+
+export const getAppointments = async (token) => {
+  const response = await fetch(`${URL}/api/appointments/scheduled`, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `Bearer ${token}`
+    }
+  });
+
+  return await response.json();
+}

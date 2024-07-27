@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { registerUser } from '../../services/apiCalls';
+import banner from "/images/banner.png"
+
 
 export const Register = () => {
     const navigate = useNavigate();    //importing the hook needed for navigating around
@@ -52,6 +54,7 @@ export const Register = () => {
         />
     </div>
     <input type="button" value="Register" onClick={register} />
+    <img src={banner} />
     </>
   )
 }

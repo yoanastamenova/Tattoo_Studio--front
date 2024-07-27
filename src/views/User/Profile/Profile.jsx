@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { profile, updateProfile } from '../../../services/apiCalls';
 import { CInput } from "../../../components/CInput/CInput";
 import "./Profile.css"
+import banner from "/images/banner.png"
+
 
 export const Profile = () => {
   const [profileData, setProfileData] = useState({
@@ -112,6 +114,7 @@ export const Profile = () => {
       className={editing ? "" : "hidden"}
       clickFunction={confirmButtonHandler}
     />
+          <img src={banner} />
   </>
 );
 };
