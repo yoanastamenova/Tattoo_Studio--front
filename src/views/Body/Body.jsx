@@ -8,6 +8,7 @@ import { Profile } from '../User/Profile/Profile'
 import { Services } from '../../components/Services/Services'
 import { Appointments } from '../User/appointments/appointments'
 import { Artists } from '../../components/Artists/Artists'
+import { NewApp } from '../User/newAppointment/NewApp'
 
 export const Body = () => {
   return (
@@ -17,6 +18,7 @@ export const Body = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/artists" element={<Artists />} />
         <Route path="/appointments" element={<Appointments />} />
+        <Route path="/appointments/new" element={<NewApp />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />

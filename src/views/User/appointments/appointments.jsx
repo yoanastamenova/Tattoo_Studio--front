@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { getAppointments } from "../../../services/apiCalls";
 import banner from "/images/banner.png";
 import { CInput } from "../../../components/CInput/CInput";
+import { useNavigate } from "react-router-dom";
 
 export const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
-  const datosUser = JSON.parse(localStorage.getItem("passport")); // Assuming the user's token is stored here
+  const datosUser = JSON.parse(localStorage.getItem("passport"));
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -32,8 +34,13 @@ export const Appointments = () => {
       hour: "2-digit",
       minute: "2-digit",
     };
-    return new Date(dateString).toLocaleDateString("en-US", options);
+    return new Date(dateString)
+    .toLocaleDateString("en-US", options);
   };
+
+  const handleNewAppointment = () => {
+    navigate('/appointments/new')
+  }
   return (
     <>
     <div>
@@ -55,6 +62,7 @@ export const Appointments = () => {
         type="button"
         name="newAppointment"
         value="Create"
+        clickFunction={handleNewAppointment}
       />
       <CInput
         type="button"
