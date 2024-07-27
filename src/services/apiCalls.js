@@ -69,11 +69,11 @@ export const getAppointments = async (token) => {
 }
 
 export const createAppointment = async (data, token) => {
-  const response = await fetch(`${URL}/appointments/create`, {
+  const response = await fetch(`${URL}/api/appointments/create`, {
     method: "POST",
     headers: {
-      "Content-Type": "applications/json",
-      "Authorization": `Brearer ${token}`
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
     },
     body: JSON.stringify(data)
   })
