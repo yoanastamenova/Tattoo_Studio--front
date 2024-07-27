@@ -67,6 +67,7 @@ export const Login = () => {
         placeholder="Login"
         clickFunction={login}
       />
+      <br />
       <img src={banner} />
     </>
   )

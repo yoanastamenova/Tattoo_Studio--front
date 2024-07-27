@@ -52,8 +52,11 @@ export const Register = () => {
           placeholder="Password"
           onChange={handleChange}
         />
+        <br />
+    <input type="button" 
+    value="Register" 
+    onClick={register} />
     </div>
-    <input type="button" value="Register" onClick={register} />
     <img src={banner} />
     </>
   )
