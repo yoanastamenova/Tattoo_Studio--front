@@ -31,7 +31,7 @@ export const Profile = () => {
       day: "numeric"
     };
     return new Date(dateString)
-    .toLocaleDateString("en-US", options);
+    .toLocaleDateString("en-GB", options);
   };
   
   let token;

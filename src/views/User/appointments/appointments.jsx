@@ -34,7 +34,7 @@ export const Appointments = () => {
       hour: "2-digit",
       minute: "2-digit",
     };
-    return new Date(dateString).toLocaleDateString("en-US", options);
+    return new Date(dateString).toLocaleDateString("en-GB", options);
   };
 
   const handleNewAppointment = () => {

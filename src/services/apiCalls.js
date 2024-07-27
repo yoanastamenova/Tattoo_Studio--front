@@ -89,3 +89,4 @@ export const deleteAppointment = async (token, id) => {
   });
   return await response.json();
 }
+

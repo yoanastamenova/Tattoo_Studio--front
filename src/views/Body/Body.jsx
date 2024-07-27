@@ -9,9 +9,18 @@ import { Services } from '../../components/Services/Services'
 import { Appointments } from '../User/appointments/appointments'
 import { Artists } from '../../components/Artists/Artists'
 import { NewApp } from '../User/newAppointment/NewApp'
+import { Users } from '../Admin/Users/Users'
 
 export const Body = () => {
+
+  const passport = JSON.parse(localStorage.getItem("passport"));
+  let role_id = null
+  if (passport) {
+    role_id = passport.tokenData.role_id;
+  }
+
   return (
+    <>
     <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
@@ -22,6 +31,10 @@ export const Body = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
-    </Routes>
+        { role_id === 2 && 
+        <Route path='/admin' element={<Users />}/>
+        }
+        </Routes>
+    </>
   )
 }
