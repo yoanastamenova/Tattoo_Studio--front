@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CSurfer } from "../CSurfer/CSurfer";
-import pic_logo from "/images/pic_logo.png"; // Update path as necessary
-import "./Header.css";
-import logo_svg from "/images/logo-svg.svg"
+import logo_svg from "/images/logo-svg.svg";
+import "../../index.css"
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -16,31 +15,57 @@ export const Header = () => {
   };
 
   return (
-    <div className="header">
-      <a onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
-        <img src={logo_svg} className="logo_inside" alt="Logo" />
+    <div className="flex justify-between items-center border-b-2 border-black p-2.5 px-5 w-full mx-auto">
+      <a onClick={() => navigate("/")} className="cursor-pointer">
+        <img src={logo_svg} className="h-5 cursor-default" alt="Logo" />
       </a>
-      <div className="nav-items">
-        <CSurfer className="nav-item" path="/" content="Home" />
-        <CSurfer className="nav-item" path="/services" content="Services" />
-        <CSurfer className="nav-item" path="/artists" content="Artists" />
+      <div className="flex cursor-pointer gap-8">
+        <CSurfer 
+          className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+          path="/" 
+          content="Home" 
+        />
+        <CSurfer 
+          className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+          path="/services" 
+          content="Services" 
+        />
+        <CSurfer 
+          className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+          path="/artists" 
+          content="Artists" 
+        />
         {token ? (
           <>
-            <CSurfer className="nav-item" path="/profile" content="Profile" />
-            <CSurfer
-              className="nav-item"
-              path="/appointments"
-              content="Appointments"
+            <CSurfer 
+              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+              path="/profile" 
+              content="Profile" 
             />
-            <div className="nav-item" onClick={handleLogout}>
-              {" "}
+            <CSurfer 
+              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+              path="/appointments" 
+              content="Appointments" 
+            />
+            <div 
+              className="py-1.25 px-3.75 cursor-pointer transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+              onClick={handleLogout}
+            >
               Logout
             </div>
           </>
         ) : (
           <>
-            <CSurfer className="nav-item" path="/register" content="Register" />
-            <CSurfer className="nav-item" path="/login" content="Login" />
+            <CSurfer 
+              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+              path="/register" 
+              content="Register" 
+            />
+            <CSurfer 
+              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
+              path="/login" 
+              content="Login" 
+            />
           </>
         )}
       </div>

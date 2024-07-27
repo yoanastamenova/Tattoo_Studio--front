@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { CInput } from '../CInput/CInput';
 import { loginUser } from '../../services/apiCalls';
-import { jwtDecode } from 'jwt-decode';
+import jwtDecode from 'jwt-decode';  // Corrected import syntax
 import { useNavigate } from 'react-router-dom';
-import banner from "/images/banner.png"
-
+import banner from "/images/banner.png";
+import "../../index.css"
 
 export const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -12,7 +12,7 @@ export const Login = () => {
     password_hash: "",
   });
 
-  const navigate = useNavigate(); // using useNavigate here
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setCredentials((prevState) => ({
@@ -21,7 +21,7 @@ export const Login = () => {
     }));
   };
 
-   const login = async () => {
+  const login = async () => {
     try {
       const response = await loginUser(credentials);
       if (response.success) {
@@ -31,8 +31,7 @@ export const Login = () => {
           tokenData: decodedToken,
         };
         localStorage.setItem("passport", JSON.stringify(passport));
-        
-        navigate('/profile'); // Navigate to profile page upon successful login
+        navigate('/profile');
       } else {
         alert(response.message);
       }
@@ -42,7 +41,7 @@ export const Login = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center justify-center min-h-screen"> {/* Centering within a full viewport height container */}
       <h1>Login</h1>
       <div>
         <CInput
@@ -62,13 +61,10 @@ export const Login = () => {
       </div>
       <CInput
         type="button"
-        name="button"
         value="Login"
-        placeholder="Login"
         clickFunction={login}
       />
-      <br />
-      <img src={banner} />
-    </>
-  )
-}
+      <img src={banner} alt="Banner" />
+    </div>
+  );
+};

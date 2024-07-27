@@ -1,16 +1,19 @@
+/* tailwind importation */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.flex{
+.center-container {
   display: flex;
-}
-
-.justify-space-between {
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensures the container takes at least the height of the viewport */
+  width: 100%; /* Ensures the container takes the full width */
 }

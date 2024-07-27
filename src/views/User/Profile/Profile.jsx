@@ -124,7 +124,7 @@ export const Profile = () => {
       className={editing ? "" : "hidden"}
       clickFunction={confirmButtonHandler}
     />
-          <img src={banner} />
+      <img src={banner} />
   </>
 );
 };
