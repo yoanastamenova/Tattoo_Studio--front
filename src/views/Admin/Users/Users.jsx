@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {CInput} from "../../../components/CInput/CInput"
-import {deleteUser, getUsers} from "../../../services/apiCalls"
+import {getUsers} from "../../../services/apiCalls"
 import "./Users.css"
 
 export const Users = () => {
@@ -17,18 +17,6 @@ export const Users = () => {
         }
         bringUsers();
     }, [])
-
-    const deleteUserHandler = async (e) => {
-        const id = +e.target.name;
-        const res = await deleteUser(token, id)
-        if(res.success) {
-            const restUsers = users.filter((user) => {
-                if(user.id !== id)
-                    return user
-            })
-            setUsers(restUsers)
-        }
-    }
   return (
       <>
       <h3>List of users registered: </h3>
@@ -45,9 +33,7 @@ export const Users = () => {
               <div className="content">{user.id}</div>
               <div className="content">{user.email}</div>
               <div className="content">{user.first_name ? user.first_name : "No"}</div>
-              <div className="content"> <CInput type='button'
-              name={user.id} value="Delete" clickFunction={deleteUserHandler}/>
-              </div>
+              <div className="content"> </div>
             </div>
         );
       })}
