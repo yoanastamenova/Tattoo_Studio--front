@@ -92,6 +92,7 @@ export const Register = () => {
                     </div>
                 </form>
             </div>
+            <br />
             <img src={banner} alt="Brand Banner" className="mx-auto mt-4" />
         </div>
     );

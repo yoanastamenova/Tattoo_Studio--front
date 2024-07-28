@@ -15,11 +15,11 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center border-b-2 border-black p-2.5 px-5 w-full mx-auto">
+    <div className="flex justify-between items-center border-b-2 border-black p-10 m-10 w-full mx-auto">
       <a onClick={() => navigate("/")} className="cursor-pointer">
         <img src={logo_svg} className="h-5 cursor-default" alt="Logo" />
       </a>
-      <div className="flex cursor-pointer gap-8">
+      <div className="flex justify-between cursor-pointer gap-8 items-center">
         <CSurfer 
           className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
           path="/" 
