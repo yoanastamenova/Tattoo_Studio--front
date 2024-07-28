@@ -1,4 +1,4 @@
-import "./index.css";
+import './styles/tailwind.css'
 import { Header } from "./components/Header/Header.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { Body } from "./views/Body/Body.jsx";

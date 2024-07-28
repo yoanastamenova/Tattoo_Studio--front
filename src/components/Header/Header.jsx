@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CSurfer } from "../CSurfer/CSurfer";
 import logo_svg from "/images/logo-svg.svg";
-import "../../index.css"
+import '../../styles/tailwind.css'
 
 export const Header = () => {
   const navigate = useNavigate();

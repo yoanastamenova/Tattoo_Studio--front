@@ -1,5 +1,5 @@
 import React from 'react'
-import missing from '../../../public/images/404.jpg'
+import missing from '/images/404.jpg'
 
 export const NotFound = () => {
   return (
