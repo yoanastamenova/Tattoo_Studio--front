@@ -2,7 +2,9 @@
 
 Welcome to my Tattoo Studio frontend project using React in conjunction with a custom REST API made by me!
 
-<img src="./img/frontend-banner.jpg"> 
+<img src="./public/images/studio.jpg">
+
+<br>
 <br>
 
 <summary> Table of contents 📝</summary> 
@@ -37,30 +39,62 @@ Technologies used for the project:
 
 <div align="center"> 
 <a href="https://reactjs.org/"> 
-<img src= "https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black"/> </a> <a href="https://www.typescriptlang.org/"> <img src= "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" /> </a>
+<img src= "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> 
+</a> 
+<a href="https://www.typescriptlang.org/"> 
+<img src= "https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+ </a>
  <a href="https://sass-lang.com/"> 
- <img src= "https://img.shields.io/badge/Sass-HF569B?style=for-the-badge&logo=sass&logoColor=white"/> </a> <a href="https://axios-http.com/"> <img src= "https://img.shields.io/badge/Axios-6700DF?style=for-the-badge&logo=axios&logoColor=white"/> </a> </div>
+ <img src= "https://img.shields.io/badge/Sass-HF569B?style=for-the-badge&logo=sass&logoColor=white"/> 
+ </a> 
+ <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/Axios-6700DF?style=for-the-badge&logo=axios&logoColor=white"/> 
+ </a> 
+  <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/> 
+ </a> 
+   <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/> 
+ </a> 
+   <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> 
+ </a> 
+    <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/> 
+ </a>
+     <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/> 
+ </a>
+      <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white"/> 
+ </a>
+       <a href="https://axios-http.com/"> 
+ <img src= "https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white"/> 
+ </a>
+ </div>
 
- ## Local installation option ⚙️
+## Local installation option ⚙️
 
 1. Clone the repository from the URL:
-` git clone https://github.com/yourusername/tattoo-studio-frontend.git `
-2. Go into the cloned repostiory 
-` cd tattoo-studio-front`
+   `git clone https://github.com/yourusername/tattoo-studio-frontend.git`
+2. Go into the cloned repostiory
+   ` cd tattoo-studio-front`
 3. Install npm packages:
-`npm install `
+   `npm install `
 4. Start the REST API server:
-` npm run dev `
-Open http://localhost:3000 to view the project in the browser.
-- If you dont have SQL installed locally you can check the documentation of the REST API for a docker command to obtain it
-5. Start the React project
-`npm run dev `
-Open http://localhost:517* to view the project web page view in the browser.
+   `npm run dev`
+   Open http://localhost:3000 to view the project in the browser.
 
+- If you dont have SQL installed locally you can check the documentation of the REST API for a docker command to obtain it
+
+5. Start the React project
+   `npm run dev `
+   Open http://localhost:517\* to view the project web page view in the browser.
 
 ## Features ⚒
 
 #### User Authentication:
+
 - Register new users.
 - Login with email and password.
 
@@ -78,9 +112,10 @@ Open http://localhost:517* to view the project web page view in the browser.
 
 - Responsive design ensuring compatibility across various devices and screen sizes.
 - Dashboard for Admins/Artists:
-   Manage appointments, services, and user roles.
+  Manage appointments, services, and user roles.
 
-## Future Improvements
+## Future Improvements 💡
+
 ✅ Implement user profile picture uploads.
 ⬜ Real-time notifications and reminders for upcoming appointments.
 ⬜ Enhanced filtering options for artist portfolios and bookings.
