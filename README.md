@@ -90,6 +90,15 @@ Technologies used for the project:
    `npm run dev `
    Open http://localhost:5174(or whatever path it was given) to view the project web page view in the browser.
 
+## Views
+
+<div align="center"> 
+   <img src="./public/images/Screenshot 2024-07-29 at 12.37.45.png"/>
+   <img src="./public/images/Screenshot 2024-07-29 at 12.38.42.png"/>
+   <img src="./public/images/Screenshot 2024-07-29 at 12.38.23.png"/>
+</div>
+
+
 ## Features ⚒
 
 #### User Authentication:
@@ -115,7 +124,7 @@ Technologies used for the project:
 
 ## Future Improvements 💡
 
-✅ Implement user profile picture uploads.
+✅ Implement artist picture uploads.
 ⬜ Real-time notifications and reminders for upcoming appointments.
 ⬜ Enhanced filtering options for artist portfolios and bookings.
 ⬜ Integration of a payment gateway for advance bookings.
