@@ -68,9 +68,6 @@ Technologies used for the project:
       <a href="https://axios-http.com/"> 
  <img src= "https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white"/> 
  </a>
-       <a href="https://axios-http.com/"> 
- <img src= "https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white"/> 
- </a>
  </div>
 
 ## Local installation option ⚙️
