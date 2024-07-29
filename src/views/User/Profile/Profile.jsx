@@ -72,6 +72,7 @@ export const Profile = () => {
           <CInput type="text" name="first_name" placeholder="First Name" value={editData.first_name} emitFunction={editInputHandler} />
           <CInput type="text" name="last_name" placeholder="Last Name" value={editData.last_name} emitFunction={editInputHandler} />
           <CInput type="email" name="email" placeholder="Email" value={editData.email} emitFunction={editInputHandler} />
+          <br />
           <button className="btn btn-primary mt-2" onClick={confirmButtonHandler}>Save Changes</button>
         </>
       ) : (

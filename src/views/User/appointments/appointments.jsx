@@ -61,6 +61,8 @@ export const Appointments = () => {
 
   return (
     <div className="container mt-4">
+      <h2>Appointments: </h2>
+      <br />
     <div className="row">
       {appointments.length > 0 ? (
         appointments.map((appointment, index) => (

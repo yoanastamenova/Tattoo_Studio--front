@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { CInput } from '../CInput/CInput';
 import { loginUser } from '../../services/apiCalls';
-import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import banner from "/images/banner.png"
+import { jwtDecode } from 'jwt-decode';
 
 
 export const Login = () => {
@@ -21,7 +21,7 @@ export const Login = () => {
     }));
   };
 
-   const login = async () => {
+  const login = async () => {
     try {
       const response = await loginUser(credentials);
       if (response.success) {
@@ -43,31 +43,42 @@ export const Login = () => {
 
   return (
     <>
-      <h1>Login</h1>
-      <div>
-        <CInput
-          type="email"
-          name="email"
-          placeholder="Email"
-          emitFunction={handleChange}
-        />
+      <div className='d-flex align-items-center justify-content-center'>
+        <div className='mb-3' style={{ width: '100%', maxWidth: '400px' }}>
+          <h1 className='text-center'>Login</h1>
+          <div className="form-group">
+            <CInput
+              type="email"
+              name="email"
+              placeholder="Email"
+              emitFunction={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <CInput
+              type="password"
+              name="password_hash"
+              placeholder="Password"
+              emitFunction={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="d-grid">
+            <CInput
+              type="button"
+              name="button"
+              value="Login"
+              placeholder="Login"
+              clickFunction={login}
+              className="btn btn-primary"
+            />
+          </div>
+        </div>
       </div>
-      <div>
-        <CInput
-          type="password"
-          name="password_hash"
-          placeholder="Password"
-          emitFunction={handleChange}
-        />
+      <div className="mt-3 text-center">
+        <img src={banner} alt="Login Banner" className="img-fluid" />
       </div>
-      <CInput
-        type="button"
-        name="button"
-        value="Login"
-        placeholder="Login"
-        clickFunction={login}
-      />
-      <img src={banner} />
     </>
   )
 }

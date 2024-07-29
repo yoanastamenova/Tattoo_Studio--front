@@ -34,32 +34,40 @@ export const Register = () => {
             console.log(error);
         }
     }
-  return (
-    <>
-    <div className='mb-3'>
-    <h1>Register</h1>
-    <div>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-        />
-    </div>
-    <br />
-    <div>
-        <input
-          type="password"
-          name="password_hash"
-          placeholder="Password"
-          onChange={handleChange}
-        />
-    </div>
-    <br />
-    <input type="button" value="Register" onClick={register} />
-    <br />
-    <img src={banner} />
-    </div>
-    </>
-  )
-}
+    return (
+      <>
+        <div className='d-flex align-items-center justify-content-center'>
+          <div className='mb-3' style={{ width: '100%', maxWidth: '400px' }}>
+            <h1 className='text-center'>Register</h1>
+            <br />
+            <div className="form-group">
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  placeholder="Email"
+                  onChange={handleChange}
+                />
+            </div>
+            <br />
+            <div className="form-group">
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password_hash"
+                  placeholder="Password"
+                  onChange={handleChange}
+                />
+            </div>
+            <br />
+            <div className="d-grid">
+                <button className="btn btn-primary" type="button" onClick={register}>Register</button>
+            </div>
+          </div>
+        </div>
+        <div className="mt-3">
+              <img src={banner} alt="Register Banner" className="img-fluid" />
+            </div>
+      </>
+    )
+  }

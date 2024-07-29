@@ -24,8 +24,8 @@ export const Artists = () => {
   return (
     <>
     <div className="container" style={{ marginTop: '20px' }}>
-    <div className="row">
-      {artists.map((artist, index) => (
+        <div className="row">
+         {artists.map((artist, index) => (
         <CCard
           key={artist.id}
           imageIndex={index} 
