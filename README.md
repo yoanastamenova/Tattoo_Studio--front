@@ -125,8 +125,11 @@ Technologies used for the project:
 ## Future Improvements 💡
 
 ✅ Implement artist picture uploads.
+<br>
 ⬜ Real-time notifications and reminders for upcoming appointments.
+<br>
 ⬜ Enhanced filtering options for artist portfolios and bookings.
+<br>
 ⬜ Integration of a payment gateway for advance bookings.
 
 ## Contribute to the project 📦
