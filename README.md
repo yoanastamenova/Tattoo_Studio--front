@@ -78,15 +78,17 @@ Technologies used for the project:
    ` cd tattoo-studio-front`
 3. Install npm packages:
    `npm install `
-4. Start the REST API server:
+4. From the REST API project clone it as well from this link:
+   `git clone https://github.com/yoanastamenova/Tattoo_Studio--back`
+    Start the REST API server:
    `npm run dev`
-   Open http://localhost:3000 to view the project in the browser.
+   Open http://localhost:4000 to view the project in the browser.
 
 - If you dont have SQL installed locally you can check the documentation of the REST API for a docker command to obtain it
 
 5. Start the React project
    `npm run dev `
-   Open http://localhost:517\* to view the project web page view in the browser.
+   Open http://localhost:5174(or whatever path it was given) to view the project web page view in the browser.
 
 ## Features ⚒
 
