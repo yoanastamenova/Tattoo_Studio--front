@@ -1,5 +1,5 @@
 .imgHome {
-    width: 80em;
+    width: 120em;
     height: 40em;
     display: block; /* Ensure the image behaves as a block level element */
     margin: auto; /* Center the image if within a container */
@@ -10,7 +10,7 @@
     justify-content: space-between; /* Adjust to align the children divs to the far edges */
     width: 100%; /* Full width of the container */
     margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
+    padding: 0; 
 }
 
 .left, .right {

@@ -100,3 +100,14 @@ export const getUsers = async (token) => {
   });
   return await response.json()
 }
+
+export const deleteUser = async (token, id) => {
+  const response = await fetch(`${URL}/api/users/${id}`, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `Bearer ${token}`
+    }
+  });
+  return await response.json();
+}

@@ -36,6 +36,7 @@ export const Register = () => {
     }
   return (
     <>
+    <div className='mb-3'>
     <h1>Register</h1>
     <div>
         <input
@@ -45,6 +46,7 @@ export const Register = () => {
           onChange={handleChange}
         />
     </div>
+    <br />
     <div>
         <input
           type="password"
@@ -53,8 +55,11 @@ export const Register = () => {
           onChange={handleChange}
         />
     </div>
+    <br />
     <input type="button" value="Register" onClick={register} />
+    <br />
     <img src={banner} />
+    </div>
     </>
   )
 }
