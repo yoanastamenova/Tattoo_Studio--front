@@ -43,11 +43,10 @@ export const Appointments = () => {
   
   const handleDeleteAppointment = async (id, index) => {
     try {
-      // Assuming `deleteAppointment` uses `(token, id)` as its parameters
       const result = await deleteAppointment(userData.token, id);
       if (result.success) {
         const updatedAppointments = [...appointments];
-        updatedAppointments.splice(index, 1); // Properly use `index` to delete from state
+        updatedAppointments.splice(index, 1);
         setAppointments(updatedAppointments);
         alert("Appointment successfully deleted.");
       } else {
@@ -61,41 +60,35 @@ export const Appointments = () => {
   };
 
   return (
-    <>
-      <div>
-        {appointments.length > 0 ? (
-          appointments.map((appointment, index) => (
-            <div key={appointment.id}>
-              <p>
-                Appointment Date: {formatDate(appointment.appointment_date)}
-              </p>
-              <p>Service: {appointment.service.service_name}</p>
-              <p>
-                Artist: {appointment.artist.first_name}{" "}
-                {appointment.artist.last_name}
-              </p>
-              <button >
-                Edit
-              </button>{" "}
-              <button
-                onClick={() => handleDeleteAppointment(appointment.id, index)}
-              >
-                Delete
-              </button>
+    <div className="container mt-4">
+      <h2>Appointments: </h2>
+      <br />
+    <div className="row">
+      {appointments.length > 0 ? (
+        appointments.map((appointment, index) => (
+          <div key={appointment.id} className="col-md-4 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <p className="card-text">Appointment Date: {formatDate(appointment.appointment_date)}</p>
+                <p className="card-text">Service: {appointment.service.service_name}</p>
+                <p className="card-text">Artist: {appointment.artist.first_name} {appointment.artist.last_name}</p>
+                <button className="btn btn-primary me-2" onClick={() => navigate(`/appointments/edit/${appointment.id}`)}>Edit</button>
+                <button className="btn btn-danger" onClick={() => handleDeleteAppointment(appointment.id, index)}>Delete</button>
+              </div>
             </div>
-          ))
-        ) : (
-          <p>No appointments found.</p>
-        )}
-        <br></br>
-        <CInput
-          type="button"
-          name="newAppointment"
-          value="Create new appointment"
-          clickFunction={handleNewAppointment}
-        />
-      </div>
-      <img src={banner} />
-    </>
+          </div>
+        ))
+      ) : (
+        <p className="col-12">No appointments found.</p>
+      )}
+    </div>
+    <CInput
+      type="button"
+      className="btn btn-success"
+      value="Create new appointment"
+      clickFunction={handleNewAppointment}
+    />
+    <img src={banner} className="img-fluid mt-3" />
+  </div>
   );
 };

@@ -109,7 +109,7 @@ export const NewApp = () => {
             <div className="button-div">
                 <CInput
                     type="button"
-                    value="Create Appointment"
+                    value="Create"
                     clickFunction={handleSendAppointment}
                     className="button-style"
                 />

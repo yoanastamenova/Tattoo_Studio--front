@@ -1,0 +1,31 @@
+.imgHome {
+    width: 120em;
+    height: 40em;
+    display: block; /* Ensure the image behaves as a block level element */
+    margin: auto; /* Center the image if within a container */
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between; /* Adjust to align the children divs to the far edges */
+    width: 100%; /* Full width of the container */
+    margin: 0; /* Remove any default margin */
+    padding: 0; 
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column; 
+    gap: 50px; /* Minimal gap to keep images close */
+    width: 45%; /* Adjust the width according to your layout needs */
+    margin: 0; /* Ensuring no additional margin */
+    padding: 0; /* Ensuring no additional padding */
+}
+
+.featured {
+    width: 100%; 
+    height: auto; 
+    margin: 0;
+    padding: 0;
+    transform: translateY(-5px); /* Optional: Pulls each image up by 5px to reduce vertical space */
+}

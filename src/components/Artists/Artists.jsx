@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CCard } from "../CCard/CCard";
 import "./Artists.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Artists = () => {
   const [artists, setArtists] = useState([]);
@@ -22,9 +23,12 @@ export const Artists = () => {
 
   return (
     <>
-      {artists.map((artist, index) => (
+    <div className="container" style={{ marginTop: '20px' }}>
+        <div className="row">
+         {artists.map((artist, index) => (
         <CCard
-          key={index}
+          key={artist.id}
+          imageIndex={index} 
           name={artist.first_name}
           surname={artist.last_name}
           specialization={artist.specialization}
@@ -32,6 +36,8 @@ export const Artists = () => {
           style={artist.style}
         />
       ))}
+      </div>
+      </div>
     </>
   );
 };
