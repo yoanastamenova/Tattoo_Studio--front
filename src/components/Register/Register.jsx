@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../services/apiCalls';
 import banner from "/images/banner.png";
-import small_logo from "/images/small_logo.png";
+import './Register.css';
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -32,40 +32,40 @@ export const Register = () => {
             console.error('Registration failed:', error);
         }
     }
+
     return (
       <>
-        <div className='d-flex align-items-center justify-content-center'>
-          <div className='mb-3' style={{ width: '100%', maxWidth: '400px' }}>
-            <h1 className='text-center'>Register</h1>
-            <br />
-            <div className="form-group">
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  placeholder="Email"
-                  onChange={handleChange}
-                />
-            </div>
-            <br />
-            <div className="form-group">
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password_hash"
-                  placeholder="Password"
-                  onChange={handleChange}
-                />
-            </div>
-            <br />
-            <div className="d-grid">
-                <button className="btn btn-primary" type="button" onClick={register}>Register</button>
-            </div>
+        <div className='register-container'>
+          <div className='register-card'>
+            <h1 className='register-title'>Register</h1>
+            <form onSubmit={handleSubmit}>
+              <div className="register-form-group">
+                  <input
+                    type="email"
+                    className="register-input"
+                    name="email"
+                    placeholder="Email Address"
+                    onChange={handleChange}
+                    required
+                  />
+              </div>
+              <div className="register-form-group">
+                  <input
+                    type="password"
+                    className="register-input"
+                    name="password_hash"
+                    placeholder="Password"
+                    onChange={handleChange}
+                    required
+                  />
+              </div>
+              <button className="register-button" type="submit">Create Account</button>
+            </form>
           </div>
         </div>
-        <div className="mt-3">
-              <img src={banner} alt="Register Banner" className="img-fluid" />
-            </div>
+        <div className="register-banner">
+          <img src={banner} alt="Noble Art Studios" />
+        </div>
       </>
     )
   }

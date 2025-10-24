@@ -15,61 +15,63 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center border-b-2 border-black p-10 m-10 w-full mx-auto">
-      <a onClick={() => navigate("/")} className="cursor-pointer">
-        <img src={logo_svg} className="h-5 cursor-default" alt="Logo" />
-      </a>
-      <div className="flex justify-between cursor-pointer gap-8 items-center">
-        <CSurfer 
-          className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-          path="/" 
-          content="Home" 
-        />
-        <CSurfer 
-          className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-          path="/services" 
-          content="Services" 
-        />
-        <CSurfer 
-          className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-          path="/artists" 
-          content="Artists" 
-        />
-        {token ? (
-          <>
-            <CSurfer 
-              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-              path="/profile" 
-              content="Profile" 
-            />
-            <CSurfer 
-              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-              path="/appointments" 
-              content="Appointments" 
-            />
-            <div 
-              className="py-1.25 px-3.75 cursor-pointer transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-              onClick={handleLogout}
-            >
-              Logout
-            </div>
-          </>
-        ) : (
-          <>
-            <CSurfer 
-              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-              path="/register" 
-              content="Register" 
-            />
-            <CSurfer 
-              className="py-1.25 px-3.75 transition-all duration-300 ease-in-out hover:border-b-2 hover:border-green-400" 
-              path="/login" 
-              content="Login" 
-            />
-          </>
-        )}
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="flex justify-between items-center px-12 py-5 max-w-full mx-auto">
+        <a onClick={() => navigate("/")} className="cursor-pointer">
+          <img src={logo_svg} className="h-10" alt="Noble Art Studios" />
+        </a>
+        <nav className="flex gap-10 items-center">
+          <CSurfer
+            className="text-black uppercase text-sm font-medium tracking-wide hover:text-green-500 transition-colors duration-300"
+            path="/"
+            content="Home"
+          />
+          <CSurfer
+            className="text-black uppercase text-sm font-medium tracking-wide hover:text-green-500 transition-colors duration-300"
+            path="/services"
+            content="Services"
+          />
+          <CSurfer
+            className="text-black uppercase text-sm font-medium tracking-wide hover:text-green-500 transition-colors duration-300"
+            path="/artists"
+            content="Artists"
+          />
+          {token ? (
+            <>
+              <CSurfer
+                className="text-black uppercase text-sm font-medium tracking-wide hover:text-green-500 transition-colors duration-300"
+                path="/profile"
+                content="Profile"
+              />
+              <CSurfer
+                className="text-black uppercase text-sm font-medium tracking-wide hover:text-green-500 transition-colors duration-300"
+                path="/appointments"
+                content="Appointments"
+              />
+              <button
+                className="bg-red-600 text-white uppercase text-sm font-bold px-6 py-3 hover:bg-red-700 transition-colors duration-300"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <CSurfer
+                className="bg-green-500 text-white uppercase text-sm font-bold px-6 py-3 hover:bg-green-600 transition-colors duration-300"
+                path="/register"
+                content="Register"
+              />
+              <CSurfer
+                className="border-2 border-black text-black uppercase text-sm font-bold px-6 py-3 hover:bg-black hover:text-white transition-all duration-300"
+                path="/login"
+                content="Login"
+              />
+            </>
+          )}
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

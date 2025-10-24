@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { CInput } from "../../../components/CInput/CInput";
 import { getUsers, deleteUser } from "../../../services/apiCalls";
 import "./Users.css";
 
@@ -40,7 +39,7 @@ export const Users = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map((user, index) => (
+                    {users.map((user) => (
                         <tr key={user.id}>
                             <td className="text-center">{user.id}</td>
                             <td className="text-center">{user.email}</td>

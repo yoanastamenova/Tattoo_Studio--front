@@ -1,7 +1,36 @@
-.arrow {
-    height: 10px;
+.tile-container {
+    text-align: left;
+    color: #ffffff;
 }
 
-.title-bold {
-    font-weight: bold;
+.tile-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    height: 12px;
+    filter: brightness(0) invert(1);
+}
+
+.tile-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #00ff00;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tile-info {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    margin: 8px 0;
+    line-height: 1.6;
 }

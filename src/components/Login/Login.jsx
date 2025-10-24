@@ -3,7 +3,7 @@ import { loginUser } from '../../services/apiCalls';
 import { useNavigate } from 'react-router-dom';
 import banner from "/images/banner.png"
 import { jwtDecode } from 'jwt-decode';
-
+import './Login.css';
 
 export const Login = () => {
     const [credentials, setCredentials] = useState({
@@ -20,7 +20,8 @@ export const Login = () => {
         }));
     };
 
-  const login = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const response = await loginUser(credentials);
       if (response.success) {
@@ -30,8 +31,8 @@ export const Login = () => {
           tokenData: decodedToken,
         };
         localStorage.setItem("passport", JSON.stringify(passport));
-        
-        navigate('/profile'); // Navigate to profile page upon successful login
+
+        navigate('/profile');
       } else {
         alert(response.message);
       }
@@ -42,41 +43,39 @@ export const Login = () => {
 
   return (
     <>
-      <div className='d-flex align-items-center justify-content-center'>
-        <div className='mb-3' style={{ width: '100%', maxWidth: '400px' }}>
-          <h1 className='text-center'>Login</h1>
-          <div className="form-group">
-            <CInput
-              type="email"
-              name="email"
-              placeholder="Email"
-              emitFunction={handleChange}
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <CInput
-              type="password"
-              name="password_hash"
-              placeholder="Password"
-              emitFunction={handleChange}
-              className="form-control"
-            />
-          </div>
-          <div className="d-grid">
-            <CInput
-              type="button"
-              name="button"
-              value="Login"
-              placeholder="Login"
-              clickFunction={login}
-              className="btn btn-primary"
-            />
+      <div className='login-container'>
+        <div className='login-card'>
+          <h1 className='login-title'>Login</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="login-form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                onChange={handleChange}
+                className="login-input"
+                required
+              />
+            </div>
+            <div className="login-form-group">
+              <input
+                type="password"
+                name="password_hash"
+                placeholder="Password"
+                onChange={handleChange}
+                className="login-input"
+                required
+              />
+            </div>
+            <button className="login-button" type="submit">Sign In</button>
+          </form>
+          <div className="login-link">
+            Don&apos;t have an account? <a href="/register">Register here</a>
           </div>
         </div>
       </div>
-      <div className="mt-3 text-center">
-        <img src={banner} alt="Login Banner" className="img-fluid" />
+      <div className="login-banner">
+        <img src={banner} alt="Noble Art Studios" />
       </div>
     </>
   )

@@ -3,15 +3,18 @@ import arrow from "/images/arrow.png"
 import "./CTile.css"
 
 
-export const CTile = ({title, img, subtitle, address, time, phone, email }) => {
+export const CTile = ({title, subtitle, address, time, phone, email }) => {
   return (
-    <div>
-        <p className='title title-bold'> {title}   <img src={arrow} className='arrow'/></p>
-        <p className='subtitle'> {subtitle} </p>
-        <p className='address'>{address}</p>
-        <p className='time'>{time}</p>
-        <p className='phone'>{phone}</p>
-        <p className='email'>{email}</p>
+    <div className='tile-container'>
+        <p className='tile-title'>
+          {title}
+          <img src={arrow} className='arrow' alt="Arrow" />
+        </p>
+        <p className='tile-subtitle'>{subtitle}</p>
+        <p className='tile-info'>{address}</p>
+        <p className='tile-info'>{time}</p>
+        <p className='tile-info'>{phone}</p>
+        <p className='tile-info'>{email}</p>
     </div>
   )
 }

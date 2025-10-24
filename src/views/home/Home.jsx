@@ -1,31 +1,33 @@
-import React from 'react'
 import studio from "/images/studio.jpg"
 import "./Home.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import fine_line from "/images/fine_line.jpeg"
-import removal from "/images/removal.jpg"
-import piercing from "/images/piercing.jpg"
+import fine_line from "/images/services/1.jpeg"
+import removal from "/images/services/2.jpg"
+import piercing from "/images/services/3.jpg"
 import artists from "/images/artists.jpg"
 
 export const Home = () => {
   return (
-    <div className="container">
-      <h1 className="text-center mt-4">Noble Art Studios</h1>
-      <img src={studio} className="imgHome img-fluid" alt="Studio"/>
-      <h2 className="text-secondary text-center mt-3">Much more than a tattoo studio</h2>
-      
-      <div className="row mt-4">
-        <div className='col-md-6'>
-          <img src={fine_line} className='img-fluid mb-3' alt="Fine Line"/>
-          <img src={piercing} className='img-fluid' alt="Piercing"/>
-        </div>
-        <div className='col-md-6'>
-          <img src={removal} className='img-fluid mb-3' alt="Removal"/>
-          <img src={artists} className='img-fluid' alt="Artists"/>
-        </div>
+    <>
+      <div className="home-hero">
+        <h1>Noble Art Studios</h1>
       </div>
 
-      <h2 className="text-center text-info mt-4">It's not a tattoo, it's art on your skin</h2>
-    </div>
+      <img src={studio} className="imgHome" alt="Noble Art Studio Interior"/>
+
+      <div className="home-subtitle-section">
+        <h2>Much more than a tattoo studio</h2>
+      </div>
+
+      <div className="main-wrapper">
+        <img src={fine_line} className='featured' alt="Fine Line Tattoo Art"/>
+        <img src={removal} className='featured' alt="Tattoo Removal Services"/>
+        <img src={piercing} className='featured' alt="Professional Piercing"/>
+        <img src={artists} className='featured' alt="Our Master Artists"/>
+      </div>
+
+      <div className="home-cta-section">
+        <h2>It&apos;s not a tattoo, it&apos;s art on your skin</h2>
+      </div>
+    </>
   );
 }
